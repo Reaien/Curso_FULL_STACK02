@@ -1,0 +1,14 @@
+#carouselExampleSlidesOnly .carousel-item{
+    object-fit: cover;
+    object-position: center;
+    height: 25vw;
+}
+
+@media (max-width: 600px){
+    #carouselExampleSlidesOnly .carousel-caption{
+        height: 7rem;
+    }
+}
+.letras_carrusel{
+    -webkit-text-stroke: 1px black;
+}

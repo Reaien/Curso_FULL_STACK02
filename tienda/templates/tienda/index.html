@@ -1,0 +1,41 @@
+{% extends 'tienda/base.html'%}
+{% block contenido %}
+{% load humanize %}
+{% load static %}
+
+
+
+        <!--Inicio titulo medio-->
+        <div class="row m-0">
+            <div class="col-12">
+                <p class="text-center fs-2 text-success fw-bold">Todo para tus animalitos !</p>
+            </div>
+        </div>
+        <!--Fin titulo medio-->
+
+
+        <!--seccion productos-->
+        <section>
+            <div class="row pt-5 pb-5 m-0">
+                {% for p in productos %}
+                <div class="col-md-3">
+                    <div class="card mb-3">
+                        {% if p.imagen %}
+                        <img src="{{p.imagen.url }}" class="card-img-top" alt="...">
+                        {% endif %}
+                        <div class="card-body text-center">
+                          <h5 class="card-title">{{p.nombre}}</h5>                          
+                          <p class="card-text">{{p.sabor}}</p>
+                          <p class="card-text">{{p.peso}}</p>
+                          <p class="card-text">{{p.marca}}</p>
+                          <p class="card-text">${{p.precio | intcomma}}</p>
+                          <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Comprar</button>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+        <!--fin seccion productos-->
+
+{% endblock %}
